@@ -1,12 +1,15 @@
 #!/bin/bash
 #
 # Load required software
-sudo apt install curl wget unzip zsh
+sudo apt install curl wget unzip zsh stow
 
-# Get the latest neovim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+# Set up nvim
+stow nvim
+
+# Install neovim
 chmod u+x nvim.appimage
-./nvim.appimage --version
+sudo cp nvim.appimage /usr/local/bin
+nvim --version
 
 # get the Nerd fonts
 mkdir FireCode
@@ -18,3 +21,8 @@ rm -r FireCode
 
 # Install OhMyZsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Install powerlevel10k
+(cd ~ ; git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k)
+echo "\niChange ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc\n\n"
+
