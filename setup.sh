@@ -7,8 +7,10 @@ sudo apt install curl wget unzip zsh stow
 stow nvim
 
 # Install neovim
+# # Get the latest neovim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
-sudo cp nvim.appimage /usr/local/bin
+sudo cp nvim.appimage /usr/local/bin/nvim
 nvim --version
 
 # get the Nerd fonts
