@@ -19,7 +19,7 @@ wget -O ./FiraCode/FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases
 unzip -d FiraCode FiraCode/FiraCode.zip
 sudo mv FiraCode/*.ttf /usr/local/share/fonts/
 sudo fc-cache -fv
-rm -r FireCode
+rm -r FiraCode
 
 # Install OhMyZsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
