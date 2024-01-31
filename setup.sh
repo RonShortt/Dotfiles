@@ -14,11 +14,11 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 nvim --version
 
 # get the Nerd fonts
-mkdir FireCode
+mkdir FiraCode
 wget -O ./FiraCode/FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip
-unzip FiraCode/FiraCode.zip
-mkdir ~/.fonts
-mv FiraCode/*.ttf ~/.fonts
+unzip -d FiraCode FiraCode/FiraCode.zip
+sudo mv FiraCode/*.ttf /usr/local/share/fonts/
+sudo fc-cache -fv
 rm -r FireCode
 
 # Install OhMyZsh
